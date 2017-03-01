@@ -12,7 +12,7 @@ char* longestCommonPrefix(char** strs, int strsSize) {
 		if (!strcmp(strs[i], ""))
 			return "";
 		int commonLen = 0;
-		while (strs[i][j] == strs[i + 1][j] && (!strs[i][j] || !strs[i + 1][j])) {
+		while (strs[i][j] == strs[i + 1][j] && (strs[i][j] || strs[i + 1][j])) {
 			commonLen++;
 			j++;
 		}
@@ -26,7 +26,7 @@ char* longestCommonPrefix(char** strs, int strsSize) {
 }
 
 int main() {
-	char *inputStrs[2]= { "c","c" };
+	char *inputStrs[2]= {"c","c"};
 
 	printf("%s", longestCommonPrefix(inputStrs, 2));
 	return 0;
